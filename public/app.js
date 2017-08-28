@@ -22409,6 +22409,14 @@ var _react = __webpack_require__(49);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _chart = __webpack_require__(185);
+
+var _chart2 = _interopRequireDefault(_chart);
+
+var _chartHead = __webpack_require__(186);
+
+var _chartHead2 = _interopRequireDefault(_chartHead);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22426,7 +22434,7 @@ var Menu = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
     _this.state = {
-      selected_radio_button: 4
+      selected_radio_button: 'week'
     };
     return _this;
   }
@@ -22453,29 +22461,22 @@ var Menu = function (_Component) {
           { id: 'radio-buttons-panel', style: { 'display': 'flex' } },
           _react2.default.createElement(
             'div',
-            { id: this.state.selected_radio_button == 1 ? 'radio-button1-is-selected' : 'radio-button1', className: 'radio-buttons', onClick: function onClick(event) {
-                return _this2.handleClick(1);
+            { id: this.state.selected_radio_button == 'year' ? 'radio-button1-is-selected' : 'radio-button1', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick('year');
               } },
             'Year'
           ),
           _react2.default.createElement(
             'div',
-            { id: this.state.selected_radio_button == 2 ? 'radio-button2-is-selected' : 'radio-button2', className: 'radio-buttons', onClick: function onClick(event) {
-                return _this2.handleClick(2);
+            { id: this.state.selected_radio_button == 'quarter' ? 'radio-button2-is-selected' : 'radio-button2', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick('quarter');
               } },
             'Quarter'
           ),
           _react2.default.createElement(
             'div',
-            { id: this.state.selected_radio_button == 3 ? 'radio-button3-is-selected' : 'radio-button3', className: 'radio-buttons', onClick: function onClick(event) {
-                return _this2.handleClick(3);
-              } },
-            'Month'
-          ),
-          _react2.default.createElement(
-            'div',
-            { id: this.state.selected_radio_button == 4 ? 'radio-button4-is-selected' : 'radio-button4', className: 'radio-buttons', onClick: function onClick(event) {
-                return _this2.handleClick(4);
+            { id: this.state.selected_radio_button == 'week' ? 'radio-button3-is-selected' : 'radio-button3', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick('week');
               } },
             'Week'
           )
@@ -22496,74 +22497,9 @@ var Menu = function (_Component) {
             'div',
             { className: 'col2', style: { 'display': 'flex' } },
             _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '1'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '2'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '3'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '4'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '5'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '6'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '7'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '8'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '9'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '10'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '11'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '12'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '13'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'chart-header-cell' },
-              '14'
+              _chartHead2.default,
+              null,
+              this.state.selected_radio_button
             )
           ),
           _react2.default.createElement(
@@ -22606,28 +22542,9 @@ var Menu = function (_Component) {
             'div',
             { className: 'col2' },
             _react2.default.createElement(
-              'div',
-              { id: 'chart', style: { 'display': 'flex' } },
-              _react2.default.createElement(
-                'div',
-                { className: 'chart-box' },
-                _react2.default.createElement('div', { className: 'goal-A' }),
-                _react2.default.createElement('div', { className: 'goal-B' }),
-                _react2.default.createElement('div', { className: 'goal-C' })
-              ),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' }),
-              _react2.default.createElement('div', { className: 'chart-box' })
+              _chart2.default,
+              null,
+              this.state.selected_radio_button
             )
           ),
           _react2.default.createElement(
@@ -22671,8 +22588,258 @@ exports.default = Menu;
 
 function _handleClick(action, state, react, ext) {
   var selected_radio_button = action.selected_radio_button;
-  react.setState({ selected_radio_button: selected_radio_button });
+  react.setState({
+    selected_radio_button: selected_radio_button
+  });
 }
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Chart = function (_Component) {
+  _inherits(Chart, _Component);
+
+  function Chart(props) {
+    _classCallCheck(this, Chart);
+
+    var _this = _possibleConstructorReturn(this, (Chart.__proto__ || Object.getPrototypeOf(Chart)).call(this, props));
+
+    _this.state = {
+      test: 0
+    };
+    return _this;
+  }
+
+  _createClass(Chart, [{
+    key: 'displayWeekRows',
+    value: function displayWeekRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement('div', { key: i, className: 'week-chart-box' }));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'displayQuarterRows',
+    value: function displayQuarterRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement('div', { key: i, className: 'quarter-chart-box' }));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'displayYearRows',
+    value: function displayYearRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement('div', { key: i, className: 'year-chart-box' }));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      switch (this.props.children) {
+        case 'year':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayYearRows(4)
+          );
+          break;
+        case 'quarter':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayQuarterRows(13)
+          );
+          break;
+        case 'week':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayWeekRows(14)
+          );
+          break;
+        default:
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayWeekRows(14)
+          );
+      }
+    }
+  }]);
+
+  return Chart;
+}(_react.Component);
+
+exports.default = Chart;
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(49);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChartHead = function (_Component) {
+  _inherits(ChartHead, _Component);
+
+  function ChartHead(props) {
+    _classCallCheck(this, ChartHead);
+
+    var _this = _possibleConstructorReturn(this, (ChartHead.__proto__ || Object.getPrototypeOf(ChartHead)).call(this, props));
+
+    _this.state = {
+      test: 0
+    };
+    return _this;
+  }
+
+  _createClass(ChartHead, [{
+    key: 'displayWeekRows',
+    value: function displayWeekRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement(
+          'div',
+          { key: i, className: 'week-header-cell' },
+          i + 1
+        ));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart-header', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'displayQuarterRows',
+    value: function displayQuarterRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement(
+          'div',
+          { key: i, className: 'month-header-cell' },
+          i + 1
+        ));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart-header', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'displayYearRows',
+    value: function displayYearRows(numrows) {
+      var rows = [];
+      for (var i = 0; i < numrows; i++) {
+        rows.push(_react2.default.createElement(
+          'div',
+          { key: i, className: 'year-header-cell' },
+          i + 1
+        ));
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'chart-header', style: { 'display': 'flex' } },
+        rows
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      switch (this.props.children) {
+        case 'year':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayYearRows(4)
+          );
+          break;
+        case 'quarter':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayQuarterRows(13)
+          );
+          break;
+        case 'week':
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayWeekRows(14)
+          );
+          break;
+        default:
+          return _react2.default.createElement(
+            'div',
+            null,
+            this.displayWeekRows(14)
+          );
+      }
+    }
+  }]);
+
+  return ChartHead;
+}(_react.Component);
+
+exports.default = ChartHead;
 
 /***/ })
 /******/ ]);
