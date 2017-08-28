@@ -9,7 +9,7 @@ app
 	})
 	.use(serveStatic(__dirname + '/public'))
 	.use(error)
-	.listen(3000)
+	.listen(process.env.PORT || 3000)
 
 function error(req, res){
 	res.end('error');
