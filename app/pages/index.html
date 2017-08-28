@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goal Tracker</title>
+  <meta charset="utf-8">
+  <style>
+    #main-panel {
+      background-color: linen;
+      border-radius: 5px;
+      border: solid 1px #949494;
+      height: 200px;
+      width: 500px;
+      z-index: 2;
+      box-shadow: 0px 4px 3px grey;
+    }
+    #radio-buttons-panel {
+      background-color: white;
+      border-radius: 10px;
+      border: solid 2px #E6E6E6;
+      height: 20px;
+    }
+    #radio-button1 {
+      border-right: 1px solid #E6E6E6;
+    }
+    #radio-button1-is-selected {
+      border-right: 1px solid #E6E6E6;
+      color: #635D57;
+      background-color: #91B089;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    #radio-button2 {
+      border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
+    }
+    #radio-button2-is-selected {
+      border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
+      color: #635D57;
+      background-color: #91B089;
+    }
+    #radio-button3 {
+      border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
+    }
+    #radio-button3-is-selected {
+      border-right: 1px solid #E6E6E6;
+      border-left: 1px solid #E6E6E6;
+      color: #635D57;
+      background-color: #91B089;
+    }
+    #radio-button4 {
+      border-left: 1px solid #E6E6E6;
+    }
+    #radio-button4-is-selected {
+      border-left: 1px solid #E6E6E6;
+      color: #635D57;
+      background-color: #91B089;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    .radio-buttons {
+      color: #949494;
+      width: 60px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 20px;
+    }
+    #chart-header {
+      margin-top: 10px;
+    }
+    .col1 {
+      width: 90px;
+      text-align: center;
+      font-family: 'helvetica';
+      font-size: 12px;
+      color: #949494;
+    }
+    #col1header {
+      border-bottom: 1px solid #949494;
+    }
+    #col1body {
+      margin-top: 1px;
+      border-top: 1px solid linen;
+    }
+    .col3 {
+      width: 90px;
+      border: 0px solid linen;
+      text-align: center;
+      font-family: 'helvetica';
+      font-size: 12px;
+      color: #949494;
+    }
+    #col3header {
+      border-bottom: 1px solid #949494;
+    }
+    #col3body {
+      margin-top: 1px;
+      border-top: 1px solid linen;
+    }
+    .row {
+      font-size: 10px;
+      margin-top: 10px;
+      line-height: 20px;
+    }
+    .chart-header-cell {
+      width: 20px;
+      border: solid 1px linen;
+      text-align: center;
+      font-family: 'helvetica';
+      font-size: 10px;
+      color: #949494;
+      border-bottom: solid 2px linen;
+    }
+    #chart {
+      border: 1px solid #E6E6E6
+    }
+    .chart-box {
+      height: 100px;
+      width: 20px;
+      background-color: white;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid #E6E6E6
+    }
+    .goal-A {
+      margin-top: 10px;
+      background-color: #66ADD5;
+      height: 20px;
+      width: 10px;
+    }
+    .goal-B {
+      margin-top: 10px;
+      background-color: #D56666;
+      height: 20px;
+      width: 15px;
+    }
+    .goal-C {
+      margin-top: 10px;
+      background-color: #66D58F;
+      height: 20px;
+      width: 15px;
+    }
+    #chart-footer {
+      margin-top: 5px;
+      font-family: 'helvetica';
+      font-size: 12px;
+      color: #949494;
+    }
+  </style>
+</head>
+<body>
+  <div id='main' style='height: 100vh; display: flex; align-items: center; justify-content: center'>
+    <div id="app"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

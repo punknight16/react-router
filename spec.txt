@@ -1,0 +1,14 @@
+files
+	routes
+		goals_tracker.js
+			get.ViewOne
+			get.ViewAll
+			post.CreateOne
+			post.EditOne
+			post.DestroyOne
+	data.js
+		goals_data
+	interpret-goals.js
+	goals_tracker.html
+	goals-chart.jsx
+	click-to-change-view.js

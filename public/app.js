@@ -9758,13 +9758,13 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Menu = __webpack_require__(184);
+var _menu = __webpack_require__(184);
 
-var _Menu2 = _interopRequireDefault(_Menu);
+var _menu2 = _interopRequireDefault(_menu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_Menu2.default, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(_menu2.default, null), document.getElementById('app'));
 
 /***/ }),
 /* 83 */
@@ -22400,7 +22400,7 @@ module.exports = ReactDOMInvalidARIAHook;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22418,29 +22418,261 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Menu = function (_Component) {
-	_inherits(Menu, _Component);
+  _inherits(Menu, _Component);
 
-	function Menu() {
-		_classCallCheck(this, Menu);
+  function Menu(props) {
+    _classCallCheck(this, Menu);
 
-		return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-	}
+    var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
-	_createClass(Menu, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'Menu' },
-				'Main Menu'
-			);
-		}
-	}]);
+    _this.state = {
+      selected_radio_button: 4
+    };
+    return _this;
+  }
 
-	return Menu;
+  _createClass(Menu, [{
+    key: 'handleClick',
+    value: function handleClick(selected_radio_button) {
+      var action = { selected_radio_button: selected_radio_button };
+      var state = {};
+      var react = { setState: this.setState.bind(this) };
+      var ext = {};
+      _handleClick(action, state, react, ext);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { id: 'main-panel', style: { 'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center', 'justifyContent': 'center' } },
+        _react2.default.createElement(
+          'div',
+          { id: 'radio-buttons-panel', style: { 'display': 'flex' } },
+          _react2.default.createElement(
+            'div',
+            { id: this.state.selected_radio_button == 1 ? 'radio-button1-is-selected' : 'radio-button1', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick(1);
+              } },
+            'Year'
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: this.state.selected_radio_button == 2 ? 'radio-button2-is-selected' : 'radio-button2', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick(2);
+              } },
+            'Quarter'
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: this.state.selected_radio_button == 3 ? 'radio-button3-is-selected' : 'radio-button3', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick(3);
+              } },
+            'Month'
+          ),
+          _react2.default.createElement(
+            'div',
+            { id: this.state.selected_radio_button == 4 ? 'radio-button4-is-selected' : 'radio-button4', className: 'radio-buttons', onClick: function onClick(event) {
+                return _this2.handleClick(4);
+              } },
+            'Week'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'chart-header', style: { 'display': 'flex', 'alignItems': 'flex-end' } },
+          _react2.default.createElement(
+            'div',
+            { className: 'col1' },
+            _react2.default.createElement(
+              'span',
+              { id: 'col1header' },
+              'Sprint Goal'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col2', style: { 'display': 'flex' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '1'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '2'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '3'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '4'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '5'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '6'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '7'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '8'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '9'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '10'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '11'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '12'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '13'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'chart-header-cell' },
+              '14'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col3' },
+            _react2.default.createElement(
+              'span',
+              { id: 'col3header' },
+              'Sprint End'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'chart-panel', style: { 'display': 'flex' } },
+          _react2.default.createElement(
+            'div',
+            { className: 'col1' },
+            _react2.default.createElement(
+              'div',
+              { id: 'col1body' },
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'Goal-A'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'Goal-B'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'Goal-C'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col2' },
+            _react2.default.createElement(
+              'div',
+              { id: 'chart', style: { 'display': 'flex' } },
+              _react2.default.createElement(
+                'div',
+                { className: 'chart-box' },
+                _react2.default.createElement('div', { className: 'goal-A' }),
+                _react2.default.createElement('div', { className: 'goal-B' }),
+                _react2.default.createElement('div', { className: 'goal-C' })
+              ),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' }),
+              _react2.default.createElement('div', { className: 'chart-box' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col3' },
+            _react2.default.createElement(
+              'div',
+              { id: 'col3body' },
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'March 20, 2017'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'April 1, 2017'
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                'November 6, 2017'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'chart-footer' },
+          '5 hours/day'
+        )
+      );
+    }
+  }]);
+
+  return Menu;
 }(_react.Component);
 
 exports.default = Menu;
+
+
+function _handleClick(action, state, react, ext) {
+  var selected_radio_button = action.selected_radio_button;
+  react.setState({ selected_radio_button: selected_radio_button });
+}
 
 /***/ })
 /******/ ]);
