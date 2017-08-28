@@ -19,6 +19,7 @@ export default class Menu extends Component {
 	render(){
 		return (
 			<div id='main-panel' style={{'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center', 'justifyContent': 'center'}}>
+      	
       	<div id='radio-buttons-panel' style={{'display': 'flex'}}>
       	  <div id={(this.state.selected_radio_button=='year') ? 'radio-button1-is-selected' : 'radio-button1'} className='radio-buttons' onClick={(event)=>this.handleClick('year')}>Year</div>
       	  <div id={(this.state.selected_radio_button=='quarter') ? 'radio-button2-is-selected' : 'radio-button2'} className='radio-buttons' onClick={(event)=>this.handleClick('quarter')}>Quarter</div>
@@ -44,7 +45,7 @@ export default class Menu extends Component {
       	    </div>
       	  </div>
       	  <div className='col2'>
-      	    <Chart>{this.state.selected_radio_button}</Chart>
+      	    <Chart selected_radio_button={this.state.selected_radio_button}>{this.state.selected_radio_button}</Chart>
       	  </div>
       	  <div className='col3'>
       	    <div id='col3body'>
@@ -55,7 +56,6 @@ export default class Menu extends Component {
       	  </div>
       	</div>
       	<div id='chart-footer'>5 hours/day</div>
-	
     	</div>
 		);
 	}
