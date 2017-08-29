@@ -22433,8 +22433,14 @@ var Menu = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
 
+    var currentTime = new Date();
+    var current_year = currentTime.getFullYear();
+    var current_month = currentTime.getMonth();
+    var current_day = currentTime.getDate();
     _this.state = {
-      selected_radio_button: 'week'
+      selected_radio_button: 'week',
+      initial_date: current_day,
+      footer_date: [current_year, current_month, current_day]
     };
     return _this;
   }
@@ -22443,10 +22449,59 @@ var Menu = function (_Component) {
     key: 'handleClick',
     value: function handleClick(selected_radio_button) {
       var action = { selected_radio_button: selected_radio_button };
-      var state = {};
       var react = { setState: this.setState.bind(this) };
-      var ext = {};
-      _handleClick(action, state, react, ext);
+      _handleClick(action, {}, react, {});
+    }
+  }, {
+    key: 'nextInitialDate',
+    value: function nextInitialDate(event) {
+      var state = this.state;
+      var react = { setState: this.setState.bind(this) };
+      _nextInitialDate({}, state, react, {});
+    }
+  }, {
+    key: 'prevInitialDate',
+    value: function prevInitialDate(event) {
+      var state = this.state;
+      var react = { setState: this.setState.bind(this) };
+      _prevInitialDate({}, state, react, {});
+    }
+  }, {
+    key: 'renderFooter',
+    value: function renderFooter() {
+      switch (this.state.selected_radio_button) {
+        case 'week':
+          return _react2.default.createElement(
+            'div',
+            { id: 'chart-footer' },
+            this.state.footer_date[0],
+            ' ',
+            displayMonth(this.state.footer_date[1])
+          );
+          break;
+        case 'quarter':
+          return _react2.default.createElement(
+            'div',
+            { id: 'chart-footer' },
+            this.state.footer_date[0],
+            ' ',
+            displayQuarter(this.state.footer_date[1])
+          );
+          break;
+        case 'year':
+          return _react2.default.createElement(
+            'div',
+            { id: 'chart-footer' },
+            this.state.footer_date[0]
+          );
+          break;
+        default:
+          return _react2.default.createElement(
+            'div',
+            null,
+            'Error'
+          );
+      }
     }
   }, {
     key: 'render',
@@ -22464,21 +22519,21 @@ var Menu = function (_Component) {
             { id: this.state.selected_radio_button == 'year' ? 'radio-button1-is-selected' : 'radio-button1', className: 'radio-buttons', onClick: function onClick(event) {
                 return _this2.handleClick('year');
               } },
-            'Year'
+            'Quarters'
           ),
           _react2.default.createElement(
             'div',
             { id: this.state.selected_radio_button == 'quarter' ? 'radio-button2-is-selected' : 'radio-button2', className: 'radio-buttons', onClick: function onClick(event) {
                 return _this2.handleClick('quarter');
               } },
-            'Quarter'
+            'Weeks'
           ),
           _react2.default.createElement(
             'div',
             { id: this.state.selected_radio_button == 'week' ? 'radio-button3-is-selected' : 'radio-button3', className: 'radio-buttons', onClick: function onClick(event) {
                 return _this2.handleClick('week');
               } },
-            'Week'
+            'Days'
           )
         ),
         _react2.default.createElement(
@@ -22498,7 +22553,7 @@ var Menu = function (_Component) {
             { className: 'col2', style: { 'display': 'flex' } },
             _react2.default.createElement(
               _chartHead2.default,
-              null,
+              { parent: this },
               this.state.selected_radio_button
             )
           ),
@@ -22543,7 +22598,7 @@ var Menu = function (_Component) {
             { className: 'col2' },
             _react2.default.createElement(
               _chart2.default,
-              { selected_radio_button: this.state.selected_radio_button },
+              { initial_date: this.state.footer_date[2], selected_radio_button: this.state.selected_radio_button },
               this.state.selected_radio_button
             )
           ),
@@ -22574,13 +22629,13 @@ var Menu = function (_Component) {
         _react2.default.createElement(
           'div',
           { style: { 'display': 'flex', 'alignItems': 'flex-end' } },
-          _react2.default.createElement('div', { className: 'arrow-left' }),
-          _react2.default.createElement(
-            'div',
-            { id: 'chart-footer' },
-            '2017 March 17'
-          ),
-          _react2.default.createElement('div', { className: 'arrow-right' })
+          _react2.default.createElement('div', { className: 'arrow-left', onClick: function onClick(event) {
+              _this2.prevInitialDate(event);
+            } }),
+          this.renderFooter(),
+          _react2.default.createElement('div', { className: 'arrow-right', onClick: function onClick(event) {
+              _this2.nextInitialDate(event);
+            } })
         )
       );
     }
@@ -22597,6 +22652,142 @@ function _handleClick(action, state, react, ext) {
   react.setState({
     selected_radio_button: selected_radio_button
   });
+}
+
+function _nextInitialDate(action, state, react, ext) {
+  var footer_date = state.footer_date;
+  switch (state.selected_radio_button) {
+    case 'week':
+      var day_expression = 7;
+      var date = new Date(footer_date[0], footer_date[1], footer_date[2]);
+      var newdate = new Date(date.setTime(date.getTime() + day_expression * 86400000));
+      footer_date = [newdate.getFullYear(), newdate.getMonth(), newdate.getDate()];
+      break;
+    case 'quarter':
+      footer_date[1] += 3;
+      if (footer_date[1] > 11) {
+        footer_date[1] -= 12;
+        footer_date[0] += 1;
+      }
+      break;
+    case 'year':
+      footer_date[0] += 1;
+      break;
+    default:
+      day_expression = 0;
+  }
+  react.setState({ footer_date: footer_date });
+}
+
+function _prevInitialDate(action, state, react, ext) {
+  var footer_date = state.footer_date;
+  switch (state.selected_radio_button) {
+    case 'week':
+      var day_expression = -7;
+      var date = new Date(footer_date[0], footer_date[1], footer_date[2]);
+      var newdate = new Date(date.setTime(date.getTime() + day_expression * 86400000));
+      footer_date = [newdate.getFullYear(), newdate.getMonth(), newdate.getDate()];
+      break;
+    case 'quarter':
+      footer_date[1] -= 3;
+      if (footer_date[1] < 0) {
+        footer_date[1] += 12;
+        footer_date[0] -= 1;
+      }
+      break;
+    case 'year':
+      footer_date[0] -= 1;
+      break;
+    default:
+      day_expression = 0;
+  }
+  react.setState({ footer_date: footer_date });
+}
+
+function displayMonth(month) {
+  switch (month) {
+    case 0:
+      return 'January';
+      break;
+    case 1:
+      return 'February';
+      break;
+    case 2:
+      return 'March';
+      break;
+    case 3:
+      return 'April';
+      break;
+    case 4:
+      return 'May';
+      break;
+    case 5:
+      return 'June';
+      break;
+    case 6:
+      return 'July';
+      break;
+    case 7:
+      return 'August';
+      break;
+    case 8:
+      return 'September';
+      break;
+    case 9:
+      return 'October';
+      break;
+    case 10:
+      return 'November';
+      break;
+    case 11:
+      return 'December';
+      break;
+    default:
+      return 'error';
+  }
+}
+
+function displayQuarter(month) {
+  switch (month) {
+    case 0:
+      return 'Quarter 1';
+      break;
+    case 1:
+      return 'Quarter 1';
+      break;
+    case 2:
+      return 'Quarter 1';
+      break;
+    case 3:
+      return 'Quarter 2';
+      break;
+    case 4:
+      return 'Quarter 2';
+      break;
+    case 5:
+      return 'Quarter 2';
+      break;
+    case 6:
+      return 'Quarter 3';
+      break;
+    case 7:
+      return 'Quarter 3';
+      break;
+    case 8:
+      return 'Quarter 3';
+      break;
+    case 9:
+      return 'Quarter 4';
+      break;
+    case 10:
+      return 'Quarter 4';
+      break;
+    case 11:
+      return 'Quarter 4';
+      break;
+    default:
+      return 'error';
+  }
 }
 
 /***/ }),
@@ -22646,7 +22837,8 @@ var Chart = function (_Component) {
     key: 'displayWeekRows',
     value: function displayWeekRows(numrows) {
       var rows = [];
-      for (var i = 0; i < numrows; i++) {
+      var initial_date = this.props.initial_date;
+      for (var i = initial_date; i < numrows + initial_date; i++) {
         rows.push(_react2.default.createElement(
           'div',
           { key: i, className: 'week-chart-box' },
@@ -22914,11 +23106,17 @@ var ChartHead = function (_Component) {
     key: 'displayWeekRows',
     value: function displayWeekRows(numrows) {
       var rows = [];
-      for (var i = 0; i < numrows; i++) {
+      var initial_date = this.props.parent.state.footer_date[2];
+      console.log(this.props.parent.state.footer_date[1]);
+      var end_date = getMonthEnd(this.props.parent.state.footer_date[1], this.props.parent.state.footer_date[0]);
+
+      for (var i = initial_date; i < numrows + initial_date; i++) {
+        var j = i + 1;
+        j = j > end_date ? j - end_date : j;
         rows.push(_react2.default.createElement(
           'div',
           { key: i, className: 'week-header-cell' },
-          i + 1
+          j
         ));
       }
       return _react2.default.createElement(
@@ -23000,6 +23198,65 @@ var ChartHead = function (_Component) {
 }(_react.Component);
 
 exports.default = ChartHead;
+
+
+function getMonthEnd(month, year) {
+  switch (month) {
+    case 0:
+      return 31;
+      break;
+    case 1:
+      if (year % 4 === 0) {
+        if (year % 100 === 0) {
+          if (year % 400 === 0) {
+            return 29;
+            break;
+          } else {
+            return 28;
+            break;
+          }
+        } else {
+          return 29;
+          break;
+        }
+      } else {
+        return 28;
+        break;
+      }
+    case 2:
+      return 31;
+      break;
+    case 3:
+      return 30;
+      break;
+    case 4:
+      return 31;
+      break;
+    case 5:
+      return 30;
+      break;
+    case 6:
+      return 31;
+      break;
+    case 7:
+      return 31;
+      break;
+    case 8:
+      return 30;
+      break;
+    case 9:
+      return 31;
+      break;
+    case 10:
+      return 30;
+      break;
+    case 11:
+      return 31;
+      break;
+    default:
+      return 'error';
+  }
+}
 
 /***/ })
 /******/ ]);

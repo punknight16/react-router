@@ -11,7 +11,8 @@ export default class Chart extends Component {
 
   displayWeekRows(numrows){
     var rows = [];
-    for (var i=0; i < numrows; i++) {
+    var initial_date = this.props.initial_date;
+    for (var i=initial_date; i < numrows+initial_date; i++) {
       rows.push(<div key={i} className='week-chart-box'>
         <ChartCell goal_style='goal-A' selected_radio_button={this.props.selected_radio_button} />
         <ChartCell goal_style='goal-B' selected_radio_button={this.props.selected_radio_button} />

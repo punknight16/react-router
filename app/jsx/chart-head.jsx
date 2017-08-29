@@ -10,8 +10,14 @@ export default class ChartHead extends Component {
 
   displayWeekRows(numrows){
     var rows = [];
-    for (var i=0; i < numrows; i++) {
-      rows.push(<div key={i} className='week-header-cell'>{i+1}</div>);
+    var initial_date = this.props.parent.state.footer_date[2];
+    console.log(this.props.parent.state.footer_date[1]);
+    var end_date = getMonthEnd(this.props.parent.state.footer_date[1], this.props.parent.state.footer_date[0]);
+    
+    for (var i=initial_date; i < numrows+initial_date; i++) {
+      var j = i+1;
+      j = (j>end_date) ? j-end_date : j;
+      rows.push(<div key={i} className='week-header-cell'>{j}</div>);
     }
     return (
       <div id='chart-header' style={{'display': 'flex'}}>
@@ -61,3 +67,61 @@ export default class ChartHead extends Component {
     
 	}
 }
+
+function getMonthEnd(month, year){
+    switch(month){
+      case 0:
+        return 31;
+        break;
+      case 1:
+        if(year%4===0){
+          if(year%100===0){
+            if(year%400===0){
+              return 29;
+              break;
+            } else {
+              return 28;
+              break;
+            }  
+          } else {
+            return 29
+            break;
+          }
+        } else {
+          return 28;
+          break;
+        }
+      case 2:
+        return 31;
+        break;
+      case 3:
+        return 30;
+        break;
+      case 4:
+        return 31;
+        break;
+      case 5:
+        return 30;
+        break;
+      case 6:
+        return 31;
+        break;
+      case 7: 
+        return 31;
+        break;
+      case 8:
+        return 30;
+        break;
+      case 9:
+        return 31;
+        break;
+      case 10:
+        return 30;
+        break;
+      case 11:
+        return 31;
+        break;
+      default:
+        return 'error';
+    }
+  }
