@@ -5,7 +5,7 @@ export default class ChartCell extends Component {
     super(props);
     this.state = { 
     	value: .5,
-      view: 'show'
+      view: 'empty'
     };
   }
   handleClick(event, view){
@@ -62,8 +62,8 @@ export default class ChartCell extends Component {
         break;
       default:
         return (<div 
-          className='goal-A'
-          style={{'width': '20px'}}
+          className='goal-empty'
+          style={{'width': base_value+'px'}}
           onClick={(event)=>{this.handleClick(event, 'intake')}}>
           </div>);
     }

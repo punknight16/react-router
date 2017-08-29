@@ -2953,6 +2953,16 @@ module.exports = DOMLazyTree;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(16);
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2965,7 +2975,7 @@ module.exports = DOMLazyTree;
 
 
 
-var EventPluginHub = __webpack_require__(21);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginUtils = __webpack_require__(34);
 
 var accumulateInto = __webpack_require__(58);
@@ -3089,7 +3099,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3369,7 +3379,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3433,7 +3443,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3482,16 +3492,6 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(16);
-
 
 /***/ }),
 /* 25 */
@@ -4061,7 +4061,7 @@ module.exports = TransactionImpl;
 
 
 
-var SyntheticUIEvent = __webpack_require__(22);
+var SyntheticUIEvent = __webpack_require__(23);
 var ViewportMetrics = __webpack_require__(65);
 
 var getEventModifierState = __webpack_require__(38);
@@ -5910,7 +5910,7 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(10);
-var ReactInstanceMap = __webpack_require__(23);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactUpdates = __webpack_require__(11);
 
@@ -9192,7 +9192,7 @@ var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMContainerInfo = __webpack_require__(174);
 var ReactDOMFeatureFlags = __webpack_require__(175);
 var ReactFeatureFlags = __webpack_require__(62);
-var ReactInstanceMap = __webpack_require__(23);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactMarkupChecksum = __webpack_require__(176);
 var ReactReconciler = __webpack_require__(18);
@@ -9750,7 +9750,7 @@ module.exports = getHostComponentFromComposite;
 "use strict";
 
 
-var _react = __webpack_require__(24);
+var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12545,7 +12545,7 @@ module.exports = ARIADOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(20);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var FallbackCompositionState = __webpack_require__(103);
 var SyntheticCompositionEvent = __webpack_require__(104);
@@ -13117,8 +13117,8 @@ module.exports = SyntheticInputEvent;
 
 
 
-var EventPluginHub = __webpack_require__(21);
-var EventPropagators = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
@@ -14174,7 +14174,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(20);
+var EventPropagators = __webpack_require__(21);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticMouseEvent = __webpack_require__(29);
 
@@ -14976,7 +14976,7 @@ var DOMLazyTree = __webpack_require__(19);
 var DOMNamespaces = __webpack_require__(40);
 var DOMProperty = __webpack_require__(13);
 var DOMPropertyOperations = __webpack_require__(69);
-var EventPluginHub = __webpack_require__(21);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginRegistry = __webpack_require__(27);
 var ReactBrowserEventEmitter = __webpack_require__(32);
 var ReactDOMComponentFlags = __webpack_require__(57);
@@ -16546,7 +16546,7 @@ module.exports = quoteAttributeValueForBrowser;
 
 
 
-var EventPluginHub = __webpack_require__(21);
+var EventPluginHub = __webpack_require__(22);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -17279,7 +17279,7 @@ module.exports = ReactDOMTextarea;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactComponentEnvironment = __webpack_require__(43);
-var ReactInstanceMap = __webpack_require__(23);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 
 var ReactCurrentOwner = __webpack_require__(10);
@@ -17894,7 +17894,7 @@ var React = __webpack_require__(16);
 var ReactComponentEnvironment = __webpack_require__(43);
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactErrorUtils = __webpack_require__(35);
-var ReactInstanceMap = __webpack_require__(23);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactNodeTypes = __webpack_require__(73);
 var ReactReconciler = __webpack_require__(18);
@@ -19990,7 +19990,7 @@ module.exports = getUnboundedScrollPosition;
 
 
 var DOMProperty = __webpack_require__(13);
-var EventPluginHub = __webpack_require__(21);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginUtils = __webpack_require__(34);
 var ReactComponentEnvironment = __webpack_require__(43);
 var ReactEmptyComponent = __webpack_require__(74);
@@ -20920,7 +20920,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(20);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(78);
@@ -21117,7 +21117,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(3);
 
 var EventListener = __webpack_require__(77);
-var EventPropagators = __webpack_require__(20);
+var EventPropagators = __webpack_require__(21);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticAnimationEvent = __webpack_require__(165);
 var SyntheticClipboardEvent = __webpack_require__(166);
@@ -21128,7 +21128,7 @@ var SyntheticMouseEvent = __webpack_require__(29);
 var SyntheticDragEvent = __webpack_require__(170);
 var SyntheticTouchEvent = __webpack_require__(171);
 var SyntheticTransitionEvent = __webpack_require__(172);
-var SyntheticUIEvent = __webpack_require__(22);
+var SyntheticUIEvent = __webpack_require__(23);
 var SyntheticWheelEvent = __webpack_require__(173);
 
 var emptyFunction = __webpack_require__(9);
@@ -21432,7 +21432,7 @@ module.exports = SyntheticClipboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(22);
+var SyntheticUIEvent = __webpack_require__(23);
 
 /**
  * @interface FocusEvent
@@ -21473,7 +21473,7 @@ module.exports = SyntheticFocusEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(22);
+var SyntheticUIEvent = __webpack_require__(23);
 
 var getEventCharCode = __webpack_require__(49);
 var getEventKey = __webpack_require__(169);
@@ -21720,7 +21720,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(22);
+var SyntheticUIEvent = __webpack_require__(23);
 
 var getEventModifierState = __webpack_require__(38);
 
@@ -22060,7 +22060,7 @@ var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactInstanceMap = __webpack_require__(23);
+var ReactInstanceMap = __webpack_require__(24);
 
 var getHostComponentFromComposite = __webpack_require__(81);
 var invariant = __webpack_require__(1);
@@ -22405,7 +22405,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(24);
+var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22413,7 +22413,7 @@ var _chart = __webpack_require__(185);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _chartHead = __webpack_require__(186);
+var _chartHead = __webpack_require__(187);
 
 var _chartHead2 = _interopRequireDefault(_chartHead);
 
@@ -22606,11 +22606,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(24);
+var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _chartCell = __webpack_require__(187);
+var _chartCell = __webpack_require__(186);
 
 var _chartCell2 = _interopRequireDefault(_chartCell);
 
@@ -22746,7 +22746,139 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(24);
+var _react = __webpack_require__(20);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChartCell = function (_Component) {
+  _inherits(ChartCell, _Component);
+
+  function ChartCell(props) {
+    _classCallCheck(this, ChartCell);
+
+    var _this = _possibleConstructorReturn(this, (ChartCell.__proto__ || Object.getPrototypeOf(ChartCell)).call(this, props));
+
+    _this.state = {
+      value: .5,
+      view: 'empty'
+    };
+    return _this;
+  }
+
+  _createClass(ChartCell, [{
+    key: 'handleClick',
+    value: function handleClick(event, view) {
+      var action = { view: view };
+      var state = {};
+      var react = { setState: this.setState.bind(this) };
+      var ext = {};
+      _handleClick(action, state, react, ext);
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(event) {
+      var action = { event: event };
+      var state = {};
+      var react = { setState: this.setState.bind(this) };
+      var ext = {};
+      _handleChange(action, state, react, ext);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var base_value;
+      switch (this.props.selected_radio_button) {
+        case 'week':
+          base_value = 24;
+          break;
+        case 'month':
+          base_value = 26;
+          break;
+        case 'year':
+          base_value = 89;
+          break;
+        default:
+          base_value = 20;
+      }
+
+      switch (this.state.view) {
+        case 'show':
+          var width_style = this.state.value * base_value + 'px';
+          return _react2.default.createElement('div', {
+            className: this.props.goal_style,
+            style: { 'width': width_style },
+            onClick: function onClick(event) {
+              _this2.handleClick(event, 'intake');
+            } });
+          break;
+        case 'intake':
+          return _react2.default.createElement('input', {
+            className: this.props.goal_style + '-intake',
+            type: 'text',
+            value: this.state.value,
+            onBlur: function onBlur(event) {
+              _this2.handleClick(event, 'show');
+            },
+            onChange: function onChange(event) {
+              _this2.handleChange(event);
+            },
+            onKeyPress: function onKeyPress(event) {
+              if (event.charCode == 13) {
+                _this2.handleClick(event, 'show');
+              }
+            } });
+          break;
+        default:
+          return _react2.default.createElement('div', {
+            className: 'goal-empty',
+            style: { 'width': base_value + 'px' },
+            onClick: function onClick(event) {
+              _this2.handleClick(event, 'intake');
+            } });
+      }
+    }
+  }]);
+
+  return ChartCell;
+}(_react.Component);
+
+exports.default = ChartCell;
+
+
+function _handleClick(action, state, react, ext) {
+  var view = action.view;
+  react.setState({ view: view });
+}
+
+function _handleChange(action, state, react, ext) {
+  var event = action.event;
+  react.setState({ value: event.target.value });
+}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(20);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22862,138 +22994,6 @@ var ChartHead = function (_Component) {
 }(_react.Component);
 
 exports.default = ChartHead;
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(24);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ChartCell = function (_Component) {
-  _inherits(ChartCell, _Component);
-
-  function ChartCell(props) {
-    _classCallCheck(this, ChartCell);
-
-    var _this = _possibleConstructorReturn(this, (ChartCell.__proto__ || Object.getPrototypeOf(ChartCell)).call(this, props));
-
-    _this.state = {
-      value: .5,
-      view: 'show'
-    };
-    return _this;
-  }
-
-  _createClass(ChartCell, [{
-    key: 'handleClick',
-    value: function handleClick(event, view) {
-      var action = { view: view };
-      var state = {};
-      var react = { setState: this.setState.bind(this) };
-      var ext = {};
-      _handleClick(action, state, react, ext);
-    }
-  }, {
-    key: 'handleChange',
-    value: function handleChange(event) {
-      var action = { event: event };
-      var state = {};
-      var react = { setState: this.setState.bind(this) };
-      var ext = {};
-      _handleChange(action, state, react, ext);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var base_value;
-      switch (this.props.selected_radio_button) {
-        case 'week':
-          base_value = 24;
-          break;
-        case 'month':
-          base_value = 26;
-          break;
-        case 'year':
-          base_value = 89;
-          break;
-        default:
-          base_value = 20;
-      }
-
-      switch (this.state.view) {
-        case 'show':
-          var width_style = this.state.value * base_value + 'px';
-          return _react2.default.createElement('div', {
-            className: this.props.goal_style,
-            style: { 'width': width_style },
-            onClick: function onClick(event) {
-              _this2.handleClick(event, 'intake');
-            } });
-          break;
-        case 'intake':
-          return _react2.default.createElement('input', {
-            className: this.props.goal_style + '-intake',
-            type: 'text',
-            value: this.state.value,
-            onBlur: function onBlur(event) {
-              _this2.handleClick(event, 'show');
-            },
-            onChange: function onChange(event) {
-              _this2.handleChange(event);
-            },
-            onKeyPress: function onKeyPress(event) {
-              if (event.charCode == 13) {
-                _this2.handleClick(event, 'show');
-              }
-            } });
-          break;
-        default:
-          return _react2.default.createElement('div', {
-            className: 'goal-A',
-            style: { 'width': '20px' },
-            onClick: function onClick(event) {
-              _this2.handleClick(event, 'intake');
-            } });
-      }
-    }
-  }]);
-
-  return ChartCell;
-}(_react.Component);
-
-exports.default = ChartCell;
-
-
-function _handleClick(action, state, react, ext) {
-  var view = action.view;
-  react.setState({ view: view });
-}
-
-function _handleChange(action, state, react, ext) {
-  var event = action.event;
-  react.setState({ value: event.target.value });
-}
 
 /***/ })
 /******/ ]);
