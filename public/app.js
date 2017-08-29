@@ -22573,8 +22573,14 @@ var Menu = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { id: 'chart-footer' },
-          '5 hours/day'
+          { style: { 'display': 'flex', 'alignItems': 'flex-end' } },
+          _react2.default.createElement('div', { className: 'arrow-left' }),
+          _react2.default.createElement(
+            'div',
+            { id: 'chart-footer' },
+            '2017 March 17'
+          ),
+          _react2.default.createElement('div', { className: 'arrow-right' })
         )
       );
     }

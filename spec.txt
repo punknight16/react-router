@@ -1,6 +1,5 @@
 files
-	routes
-		goals_tracker.js
+	routes.js
 			get.ViewOne
 			get.ViewAll
 			post.CreateOne

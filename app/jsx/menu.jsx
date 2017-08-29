@@ -55,7 +55,11 @@ export default class Menu extends Component {
       	    </div>
       	  </div>
       	</div>
-      	<div id='chart-footer'>5 hours/day</div>
+      	<div style={{'display': 'flex', 'alignItems': 'flex-end'}}>
+          <div className='arrow-left'></div>
+          <div id='chart-footer'>2017 March 17</div>
+          <div className='arrow-right'></div>
+        </div>
     	</div>
 		);
 	}
